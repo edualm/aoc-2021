@@ -17,17 +17,17 @@ struct Challenge {
         case up(Int)
         
         init?(_ input: [String]) {
-            guard input.count == 2 else { return nil }
+            guard input.count == 2, let value = Int(input[1]) else { return nil }
             
             switch input[0] {
             case "forward":
-                self = .forward(Int(input[1]) ?? 0)
+                self = .forward(value)
                 
             case "down":
-                self = .down(Int(input[1]) ?? 0)
+                self = .down(value)
                 
             case "up":
-                self = .up(Int(input[1]) ?? 0)
+                self = .up(value)
                 
             default:
                 return nil
@@ -43,12 +43,12 @@ struct Challenge {
             .compactMap(Command.init)
         
         var verticalPosition = 0
-        var horizontalPosition = 0
+        var depth = 0
         
         commands.forEach {
             switch $0 {
             case .forward(let value):
-                horizontalPosition += value
+                depth += value
                 
             case .down(let value):
                 verticalPosition += value
@@ -58,7 +58,7 @@ struct Challenge {
             }
         }
         
-        print("Part 1 answer: \(verticalPosition * horizontalPosition)")
+        print("Part 1 answer: \(verticalPosition * depth)")
     }
 
     func part2() {
@@ -67,14 +67,14 @@ struct Challenge {
             .compactMap(Command.init)
         
         var verticalPosition = 0
-        var horizontalPosition = 0
+        var depth = 0
         
         var aim = 0
         
         commands.forEach {
             switch $0 {
             case .forward(let value):
-                horizontalPosition += value
+                depth += value
                 verticalPosition += aim * value
                 
             case .down(let value):
@@ -85,6 +85,6 @@ struct Challenge {
             }
         }
         
-        print("Part 2 answer: \(verticalPosition * horizontalPosition)")
+        print("Part 2 answer: \(verticalPosition * depth)")
     }
 }

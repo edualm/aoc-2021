@@ -11,7 +11,7 @@ import Utilities
 enum Constants {
     
     static let year = 2021
-    static let day = 1
+    static let day = 0
     
     static var banner: String {
         "🎅 🎄 🎁 Advent of Code \(Constants.year) - Day \(Constants.day >= 10 ? "\(Constants.day)" : "0\(Constants.day)") 🎅 🎄 🎁"

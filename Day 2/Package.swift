@@ -5,23 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "Day 2",
-    dependencies: [],
+    dependencies: [
+        .package(path: "../Utilities")
+    ],
     targets: [
         .target(
             name: "Challenge",
             dependencies: ["Utilities"]
         ),
-        .target(
-            name: "Utilities",
-            dependencies: []
-        ),
         .testTarget(
             name: "ChallengeTests",
             dependencies: ["Challenge"]
-        ),
-        .testTarget(
-            name: "UtilitiesTests",
-            dependencies: ["Utilities"]
         )
     ]
 )

@@ -4,24 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "AoC 2021",
-    dependencies: [],
+    name: "Day X",
+    dependencies: [
+        .package(path: "../Utilities")
+    ],
     targets: [
         .target(
             name: "Challenge",
             dependencies: ["Utilities"]
         ),
-        .target(
-            name: "Utilities",
-            dependencies: []
-        ),
         .testTarget(
             name: "ChallengeTests",
             dependencies: ["Challenge"]
-        ),
-        .testTarget(
-            name: "UtilitiesTests",
-            dependencies: ["Utilities"]
         )
     ]
 )
