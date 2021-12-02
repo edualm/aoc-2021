@@ -8,7 +8,9 @@
 import Foundation
 import Utilities
 
-struct Challenge {
+struct Challenge: RunnableChallenge {
+    
+    let day: Int = 2
     
     enum Command {
         

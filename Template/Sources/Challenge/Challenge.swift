@@ -8,7 +8,9 @@
 import Foundation
 import Utilities
 
-struct Challenge {
+struct Challenge: RunnableChallenge {
+    
+    let day: Int = 0
     
     let input: [[String]]
     
