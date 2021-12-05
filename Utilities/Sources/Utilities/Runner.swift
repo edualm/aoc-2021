@@ -15,12 +15,12 @@ public struct Runner {
         self.challengeType = challengeType
     }
     
-    public func run() {
+    public func run(inputIsCommaSeparated: Bool = true) {
         do {
             let arguments = ProcessInfo.processInfo.arguments
             let fileName = arguments.count >= 2 ? arguments[1] : "input.txt"
             
-            let challenge = challengeType.init(input: try IOUtilities.readInput(fileName: fileName))
+            let challenge = challengeType.init(input: try IOUtilities.readInput(fileName: fileName, isCommaSeparated: inputIsCommaSeparated))
             
             print("\(Banner.with(day: challenge.day))\n")
             
