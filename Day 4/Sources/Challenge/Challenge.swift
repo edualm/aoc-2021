@@ -39,15 +39,15 @@ struct Challenge: RunnableChallenge {
         return bingoBoards
     }
     
-    func part1() {
+    func part1() -> String? {
         let numbers = input[0].compactMap(Int.init)
         
         var bingoBoards = parseBingoBoards()
         
-        var complete = false
+        var answer: String?
         
         numbers.forEach { number in
-            if complete {
+            if answer != nil {
                 return
             }
             
@@ -55,15 +55,15 @@ struct Challenge: RunnableChallenge {
                 bingoBoards[x].mark(number)
                 
                 if bingoBoards[x].isComplete {
-                    complete = true
-                    
-                    print("Part 1 answer: \(bingoBoards[x].unmarkedNumberSum * number)")
+                    answer = "\(bingoBoards[x].unmarkedNumberSum * number)"
                 }
             }
         }
+        
+        return answer
     }
 
-    func part2() {
+    func part2() -> String? {
         let numbers = input[0].compactMap(Int.init)
         
         var bingoBoards = parseBingoBoards()
@@ -86,6 +86,6 @@ struct Challenge: RunnableChallenge {
             }
         }
         
-        print("Part 2 answer: \(lastBingoBoard!.unmarkedNumberSum * lastBingoBoardNumber!)")
+        return "\(lastBingoBoard!.unmarkedNumberSum * lastBingoBoardNumber!)"
     }
 }

@@ -13,6 +13,6 @@ public protocol RunnableChallenge {
     
     init(input: [[String]])
     
-    func part1()
-    func part2()
+    func part1() -> String?
+    func part2() -> String?
 }

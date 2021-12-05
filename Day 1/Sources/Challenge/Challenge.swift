@@ -14,7 +14,7 @@ struct Challenge: RunnableChallenge {
     
     let input: [[String]]
     
-    func part1() {
+    func part1() -> String? {
         let inputs = input.reduce([], +).compactMap(Int.init)
         
         var previous = -1
@@ -29,14 +29,14 @@ struct Challenge: RunnableChallenge {
             previous = $0
         }
         
-        print("Part 1 answer: \(sum)")
+        return "\(sum)"
     }
     
     private func sumTuple(_ tuple: (Int, Int, Int)) -> Int {
         return tuple.0 + tuple.1 + tuple.2
     }
 
-    func part2() {
+    func part2() -> String? {
         let inputs = input.reduce([], +).compactMap(Int.init)
         
         var previous = (-1, -1, -1)
@@ -53,6 +53,6 @@ struct Challenge: RunnableChallenge {
             previous = curr
         }
         
-        print("Part 2 answer: \(sum)")
+        return "\(sum)"
     }
 }

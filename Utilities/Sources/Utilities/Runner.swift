@@ -24,8 +24,13 @@ public struct Runner {
             
             print("\(Banner.with(day: challenge.day))\n")
             
-            challenge.part1()
-            challenge.part2()
+            if let answer = challenge.part1() {
+                print("Part 1 answer: \(answer)")
+            }
+            
+            if let answer = challenge.part2() {
+                print("Part 2 answer: \(answer)")
+            }
         } catch {
             print("❌ Execution Error: \(error)")
         }

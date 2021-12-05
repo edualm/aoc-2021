@@ -14,7 +14,7 @@ struct Challenge: RunnableChallenge {
     
     let input: [[String]]
     
-    func part1() {
+    func part1() -> String? {
         let inputs = input.reduce([], +)
         
         var gammaRateNumbers = [String]()
@@ -42,10 +42,10 @@ struct Challenge: RunnableChallenge {
         let gammaRate = Int(gammaRateAsBinaryStr, radix: 2)!
         let epsilonRate = Int(epsilonRateAsBinaryStr, radix: 2)!
         
-        print("Part 1 answer: \(gammaRate * epsilonRate)")
+        return "\(gammaRate * epsilonRate)"
     }
 
-    func part2() {
+    func part2() -> String? {
         let inputs = input.reduce([], +)
         
         var gammaRateNumbers = inputs
@@ -100,6 +100,6 @@ struct Challenge: RunnableChallenge {
         let gammaRate = Int(gammaRateNumbers.first!, radix: 2)!
         let epsilonRate = Int(epsilonRateNumbers.first!, radix: 2)!
         
-        print("Part 2 answer: \(gammaRate * epsilonRate)")
+        return "\(gammaRate * epsilonRate)"
     }
 }

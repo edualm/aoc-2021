@@ -39,7 +39,7 @@ struct Challenge: RunnableChallenge {
     
     let input: [[String]]
     
-    func part1() {
+    func part1() -> String? {
         let commands = input.reduce([], +)
             .map { $0.split(separator: " ").map(String.init) }
             .compactMap(Command.init)
@@ -60,10 +60,10 @@ struct Challenge: RunnableChallenge {
             }
         }
         
-        print("Part 1 answer: \(verticalPosition * depth)")
+        return "\(verticalPosition * depth)"
     }
 
-    func part2() {
+    func part2() -> String? {
         let commands = input.reduce([], +)
             .map { $0.split(separator: " ").map(String.init) }
             .compactMap(Command.init)
@@ -87,6 +87,6 @@ struct Challenge: RunnableChallenge {
             }
         }
         
-        print("Part 2 answer: \(verticalPosition * depth)")
+        return "\(verticalPosition * depth)"
     }
 }

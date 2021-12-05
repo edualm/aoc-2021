@@ -44,7 +44,7 @@ struct Challenge: RunnableChallenge {
             .map(VentLine.init)
     }
     
-    func part1() {
+    func part1() -> String? {
         let values = inputToValues()
         
         var map = [Coordinate2D: Int]()
@@ -81,10 +81,10 @@ struct Challenge: RunnableChallenge {
             }
         }
         
-        print("Part 1 answer: \(result)")
+        return "\(result)"
     }
 
-    func part2() {
+    func part2() -> String? {
         let values = inputToValues()
         
         var map = [Coordinate2D: Int]()
@@ -155,6 +155,6 @@ struct Challenge: RunnableChallenge {
             }
         }
         
-        print("Part 2 answer: \(result)")
+        return "\(result)"
     }
 }
