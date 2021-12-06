@@ -6,13 +6,17 @@
 import Foundation
 import Utilities
 
-struct Challenge: RunnableChallenge {
+public struct Challenge: RunnableChallenge {
     
-    let day: Int = 0
+    public let day: Int = 0
     
     let input: [[String]]
     
-    func part1() -> String? {
+    public init(input: [[String]]) {
+        self.input = input
+    }
+    
+    public func part1() -> String? {
         print("➜ Input: \(input)")
         print("➜ Number of lines: \(input.count)")
         print("➜ Input as flattened ints: \(input.reduce([], +).compactMap(Int.init))")
@@ -21,7 +25,7 @@ struct Challenge: RunnableChallenge {
         return nil
     }
 
-    func part2() -> String? {
+    public func part2() -> String? {
         return nil
     }
 }

@@ -6,11 +6,15 @@
 import Foundation
 import Utilities
 
-struct Challenge: RunnableChallenge {
+public struct Challenge: RunnableChallenge {
     
-    let day: Int = 0
+    public let day: Int = 6
     
     let input: [[String]]
+    
+    public init(input: [[String]]) {
+        self.input = input
+    }
     
     func solve(days: Int) -> String? {
         let fishWithDays = input.reduce([], +).compactMap(Int.init)
@@ -38,11 +42,11 @@ struct Challenge: RunnableChallenge {
         return "\(population.reduce(0, +))"
     }
     
-    func part1() -> String? {
+    public func part1() -> String? {
         solve(days: 80)
     }
 
-    func part2() -> String? {
+    public func part2() -> String? {
         solve(days: 256)
     }
 }

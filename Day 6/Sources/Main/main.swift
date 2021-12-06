@@ -1,9 +1,9 @@
 //
 //  main.swift
-//  Challenge
+//  Main
 //
 
-import Foundation
+import Challenge
 import Utilities
 
 Runner(challengeType: Challenge.self)

@@ -10,6 +10,10 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "Main",
+            dependencies: ["Challenge"]
+        ),
+        .target(
             name: "Challenge",
             dependencies: ["Utilities"]
         ),
