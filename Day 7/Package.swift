@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Day 6",
+    name: "Day 7",
     dependencies: [
         .package(path: "../Utilities")
     ],
