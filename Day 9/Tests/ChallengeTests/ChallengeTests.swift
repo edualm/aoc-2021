@@ -14,13 +14,13 @@ final class ChallengeTests: XCTestCase {
         let testInput = try IOUtilities.readInput(fileName: "test.txt", isCommaSeparated: true)
         let challenge = Challenge(input: testInput)
         
-        XCTAssertEqual(challenge.part1(), nil)
+        XCTAssertEqual(challenge.part1(), "15")
     }
     
     func testPart2() throws {
         let testInput = try IOUtilities.readInput(fileName: "test.txt", isCommaSeparated: true)
         let challenge = Challenge(input: testInput)
         
-        XCTAssertEqual(challenge.part2(), nil)
+        XCTAssertEqual(challenge.part2(), "1134")
     }
 }
